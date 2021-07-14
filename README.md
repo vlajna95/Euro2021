@@ -32,7 +32,7 @@ Then you can import the data provided in matches app fixtures (JSON format), if 
 python -Xutf8 manage.py loaddata matches
 ```
 
-**Important:** Use the Python UTF-8 mode in order to avoid encoding problems, I've used some emojis here. :) 
+**Important:** Use the Python UTF-8 mode in order to avoid encoding problems, I've used some emojis here. :smiley: 
 
 
 ## An additional command 
@@ -46,3 +46,8 @@ python manage.py newmatch "12 FRAGER"
 This will create the file **12 FRAGER.txt** in the root directory and pre-fill it with the default syntax. Try it, it wont do anything to the database. 
 
 **Note:** You must have the 22 player names in your clipboard for this to work, every player in its own line, with no empty lines between the two teams.
+
+
+## Some random details 
+
+The project and database contents are in serbian, if anybody cares. :grin:

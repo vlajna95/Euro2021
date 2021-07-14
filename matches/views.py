@@ -1,4 +1,4 @@
-from django.views.generic import View, ListView, DetailView
+from django.views.generic import View, TemplateView, ListView, DetailView
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Count, Q
@@ -10,6 +10,10 @@ def get_phase_count():
 	return queryset
 
 latest_matches = Match.objects.order_by("-pk")[:5]
+
+
+class Index(TemplateView):
+	template_name = "matches/index.html"
 
 
 class SearchMatches(View):
