@@ -1,0 +1,59 @@
+{% extends "matches/base.html" %}
+{% load static %}
+
+{% block style_and_scripts %}
+{{ block.super }}
+<style type="text/css">
+#group_teams li {
+display: inline-block;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+{% endblock %}
+
+{% block title %}Grupa {{ group.title }} | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-lg-8"> 
+<main class="container">
+<article class="single">
+<header class="details">
+<h1>{{ group.name }}</h1>
+</header>
+<section>
+<header>
+<section>
+<header>
+<h2>Timovi u grupi {{ group.title }}</h2>
+</header>
+<ul id="group_teams">
+{% for team in group.teams.all %}
+<li><a href="{{ team.get_absolute_url }}">{{ team.name }}</a></li>
+{% endfor %}
+</ul>
+</section>
+<section>
+<header>
+<h2>Mečevi odigrani u okviru grupe</h2>
+</header>
+{% for team in group.teams.all %}
+{% for match in team.matches_hosted.all %}
+<p>
+<h3><a href="{{ match.get_absolute_url }}">{{ match.title }}</a></h3>
+<span>{{ match.team1.name }} {{ match.team1_goals }} - {{ match.team2_goals }} {{ match.team2.name }}</span>
+</p>
+{% endfor %}
+{% endfor %}
+</section>
+</article>
+</main>
+</div>
+
+{% include "matches/sidebar.html" with most_recent=most_recent %}
+</div>
+</div>
+{% endblock content %}

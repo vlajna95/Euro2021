@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="title" content="Kostur ☠" />
+<meta name="description" content="Osnova za bilo koju stranicu" />
+<meta name="keywords" content="osnova, stranica, sajt, web" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>O sajtu | Kostur ☠</title>
+<link rel="stylesheet" href="css/w3.css" type="text/css" />
+<style type="text/css">
+:root {
+font-size: 12px;
+}
+body {
+width: 70%;
+height: 100%;
+margin: auto;
+}
+ul li {
+list-style-type: none;
+}
+</style>
+<script src="js/w3.js"></script>
+</head>
+<body class="w3-black w3-text-white">
+<div class="w3-container w3-row w3-black w3-text-white">
+<section class="w3-container w3-quarter sidebar" style="height: 100%;">
+<header>
+<h2>Kostur ☠</h2>
+<p>Osnova za bilo koju stranicu</p>
+</header>
+<nav class="w3-container w3-left w3-bar-block" style="background-color: #440044;">
+<ul role="menu">
+<li role="menuitem" class="w3-bar-item w3-hover-blue"><a href="/">Početna</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-red"><a href="/o-sajtu.html">O sajtu</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-yellow"><a href="/o-autoru.html">O autoru</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-green"><a href="/kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<div class="w3-container w3-purple">
+<blockquote class="quotes">Dođoh, videh, pobedih. <br />—Cezar</blockquote>
+<blockquote class="quotes">Mislim, dakle postojim. <br />—Sokrat</blockquote>
+<blockquote class="quotes">Pamtim samo sretne dane. <br />—Arsen Dedić</blockquote>
+</div><!-- end of quotes -->
+</section><!-- end of sidebar -->
+
+<main class="w3-container w3-threequarter">
+<div class="w3-container">
+<img class="slide1" src="img/nature.jpg" alt="Priroda" width="100%" />
+<img class="slide1" src="img/mountains.jpg" alt="Planine" width="100%" />
+<img class="slide1" src="" width="100%img/snowtops.jpg" alt="Snežni vrhovi" />
+</div><!-- end of slideshow -->
+<h1>O sajtu</h1>
+<details class="w3-container" open>
+<!-- <button class="w3-button" onclick="w3.toggleShow('#test_p');">Prikaži/sakrij tekst</button> -->
+<summary class="w3-button">O meni</summary>
+<p style="background-color: #440044;">Zovem se Danijela Popović, rođena sam 30. 11. 1995. i volim razne stvari: muziku, čitanje, programiranje, tehnologiju generalno, šetnje po prirodi, plažu, sankanje i grudvanje...</p>
+</details>
+</main>
+
+<footer class="w3-container w3-bottom" style="width: 100%;">
+<p>&copy; 2021 Dani</p>
+</footer>
+</div>
+
+<script>
+w3.slideshow(".slide1", 1500);
+w3.slideshow(".quotes", 3000);
+</script>
+</body>
+</html>

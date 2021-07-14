@@ -1,0 +1,52 @@
+{% extends "matches/base.html" %}
+{% load static %}
+
+{% block title %}Mečevi | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<!-- Latest matches -->
+<main class="matches-listing col-lg-8"> 
+<div class="container">
+<div class="row">
+<!-- match -->
+{% for match in queryset %}
+<article class="match col-xl-6">
+<header>
+<h3><a href="{{ match.get_absolute_url }}">{{ match.title }}</a></h3>
+</header>
+<section class="match-details">
+<p class="phase text-muted">Faza takmičenja: {{ match.phase }}</p>
+<p class="score">{{ match.team1 }} {{ match.team1_goals }} - {{ match.team2_goals }} {{ match.team2 }}</p>
+</section>
+</article>
+{% endfor %}
+</div>
+<!-- Pagination -->
+{% if is_paginated %}
+<nav aria-label="Navigacija po stranicama">
+<ul class="pagination pagination-template d-flex justify-content-center">
+{% if page_obj.has_previous %}
+{% if page_obj.previous_page_number != 1 %}
+<span class="page-item"><a href="?{{ page_request_var }}=1" title="Prethodna strana" aria-label="1" class="page-link"><i class="fa fa-angle-double-left" aria-hidden="true" title="Prva strana"></i> 1 </a> ...&nbsp;</span>
+{% endif %}
+<span class="page-item">&nbsp;<a href="?{{ page_request_var }}={{ page_obj.previous_page_number }}" title="Prethodna strana" aria-label="{{ page_obj.previous_page_number }}" class="page-link"><i class="fa fa-angle-left" aria-hidden="true" title="Prethodna strana"></i> {{ page_obj.previous_page_number }}</a>&nbsp;</span>
+{% endif %}
+<span class="page-item">&nbsp;<a href="?{{ page_request_var }}={{ page_obj.number }}" title="Trenutna strana" class="page-link active">{{ page_obj.number }}</a>&nbsp;</span>
+{% if page_obj.has_next %}
+<span class="page-item">&nbsp;<a href="?{{ page_request_var }}={{ page_obj.next_page_number }}" title="Sledeća strana" aria-label="{{ page_obj.next_page_number }}" class="page-link">{{ page_obj.next_page_number }} <i class="fa fa-angle-right" aria-hidden="true" title="Sledeća strana"></i></a>&nbsp;</span>
+{% if page_obj.next_page_number != page_obj.paginator.num_pages %}
+<span class="page-item">&nbsp;... <a href="?{{ page_request_var }}={{ page_obj.paginator.num_pages }}" title="Poslednja strana" aria-label="{{ page_obj.paginator.num_pages }}" class="page-link">{{ page_obj.paginator.num_pages }} <i class="fa fa-angle-double-right" aria-hidden="true" title="Poslednja strana"></i></a></span>
+{% endif %}
+{% endif %}
+</ul>
+</nav>
+{% endif %}
+</div>
+</main>
+
+{% include "matches/sidebar.html" with most_recent=most_recent %}
+</div>
+</div>
+{% endblock content %}

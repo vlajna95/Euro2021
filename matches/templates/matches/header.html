@@ -1,0 +1,43 @@
+<header class="header">
+<!-- Main Navbar-->
+<nav class="navbar navbar-expand-lg" style="margin: 0;">
+<div class="container">
+<!-- Navbar Brand -->
+<div class="navbar-header d-flex align-items-center justify-content-between">
+<!-- Navbar Brand -->
+<h2><a href="/" class="navbar-brand">{{ settings.SITE_TITLE }}</a></h2>
+<!-- Toggle Button
+<button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Prikaži/sakrij navigaciju" class="navbar-toggler"><span></span><span></span><span></span></button>
+-->
+</div>
+<!-- Navbar Menu -->
+<div id="navbarcollapse" class="collapse navbar-collapse">
+<ul class="navbar-nav ml-auto" role="menu">
+<li class="nav-item" role="menuitem"><a href="/" class="nav-link ">Početna</a></li>
+<li class="nav-item" role="menuitem"><a href="{% url 'group_list' %}" class="nav-link">Grupe</a></li>
+<li class="nav-item" role="menuitem"><a href="{% url 'phase_list' %}" class="nav-link">Faze</a></li>
+<li class="nav-item" role="menuitem"><a href="{% url 'match_list' %}" class="nav-link">Mečevi</a></li>
+<li class="nav-item" role="menuitem"><a href="{% url 'team_list' %}" class="nav-link">Timovi</a></li>
+<li class="nav-item" role="menuitem"><a href="{% url 'admin:index' %}" class="nav-link">Administracija</a></li>
+</ul>
+<section class="search-area">
+<div class="search-area-inner d-flex align-items-center justify-content-center">
+<a href="#" aria-label="Sakrij pretragu" class="close-btn"><i class="icon-close" aria-hidden="true" title="Sakrij pretragu"></i></a>
+<div class="row d-flex justify-content-center">
+<div class="col-md-8">
+<form action="{% url 'search_matches' %}">
+<div class="form-group">
+<input type="search" name="q" id="search" placeholder="Pretraži mečeve" />
+<button type="submit" aria-label="Pretraži" class="submit"><i class="icon-search-1" aria-hidden="true" title="Pretraži"></i></button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<div class="navbar-text"><a href="#" aria-label="Prikaži pretragu" class="search-btn"><i class="icon-search-1" aria-hidden="true" title="Prikaži pretragu"></i></a></div>
+{% comment %}<ul class="langs navbar-text"><a href="#" class="active">EN</a><span></span><a href="#">ES</a></ul>{% endcomment %}
+</div>
+</div>
+</nav>
+</header>

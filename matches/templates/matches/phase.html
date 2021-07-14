@@ -1,0 +1,30 @@
+{% extends "matches/base.html" %}
+{% load static %}
+
+{% block title %}{{ phase.title }} | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-lg-8"> 
+<main class="container">
+<article class="single">
+<header class="details">
+<h2>{{ phase.title }}</h2>
+{% for f in phase.fields %}
+<p>{{ f.name }}: {{ f.value }}</p>
+{% endfor %}
+</header><hr />
+<section>
+{% for mattch in phase.matches.all %}
+<span>{{ match.title }}</span><br />
+{% endfor %}
+</section>
+</article>
+</main>
+</div>
+
+{% include "matches/sidebar.html" with most_recent=most_recent %}
+</div>
+</div>
+{% endblock content %}

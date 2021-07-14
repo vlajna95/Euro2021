@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="title" content="Kostur ☠" />
+<meta name="description" content="Osnova za bilo koju stranicu" />
+<meta name="keywords" content="osnova, stranica, sajt, web" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kontakt | Kostur ☠</title>
+<link rel="stylesheet" href="css/w3.css" type="text/css" />
+<style type="text/css">
+:root {
+font-size: 12px;
+}
+body {
+width: 70%;
+height: 100%;
+margin: auto;
+}
+ul li {
+list-style-type: none;
+}
+th {
+text-align: right;
+}
+</style>
+<script src="js/w3.js"></script>
+</head>
+<body class="w3-black w3-text-white">
+<div class="w3-container w3-row w3-black w3-text-white">
+<section class="w3-container w3-quarter sidebar" style="height: 100%;">
+<header>
+<h2>Kostur ☠</h2>
+<p>Osnova za bilo koju stranicu</p>
+</header>
+<nav class="w3-container w3-left w3-bar-block" style="background-color: #440044;">
+<ul role="menu">
+<li role="menuitem" class="w3-bar-item w3-hover-blue"><a href="/">Početna</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-red"><a href="/o-sajtu.html">O sajtu</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-yellow"><a href="/o-autoru.html">O autoru</a></li>
+<li role="menuitem" class="w3-bar-item w3-hover-green"><a href="/kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+<div class="w3-container w3-purple">
+<blockquote class="quotes">Dođoh, videh, pobedih. <br />—Cezar</blockquote>
+<blockquote class="quotes">Mislim, dakle postojim. <br />—Sokrat</blockquote>
+<blockquote class="quotes">Pamtim samo sretne dane. <br />—Arsen Dedić</blockquote>
+</div><!-- end of quotes -->
+</section><!-- end of sidebar -->
+
+<main class="w3-container w3-threequarter">
+<div class="w3-container">
+<img class="slide1" src="img/nature.jpg" alt="Priroda" width="100%" />
+<img class="slide1" src="img/mountains.jpg" alt="Planine" width="100%" />
+<img class="slide1" src="" width="100%img/snowtops.jpg" alt="Snežni vrhovi" />
+</div><!-- end of slideshow -->
+<h1>Kontakt</h1>
+<details class="w3-container" open>
+<summary class="w3-button">Piši mi</summary>
+<div style="background-color: #440044;">
+<form action="kontakt.php" method="POST">
+<table>
+<tr>
+<th><label for="name">Ime i prezime: <span class="w3-text-red">*</span></label></th>
+<td><input type="text" name="name" id="name" required /></td>
+</tr>
+<tr>
+<th><label for="email">Tvoj mejl: <span class="w3-text-red">*</span></label></th>
+<td><input type="email" name="email" id="email" required /></td>
+</tr>
+<tr>
+<th><label for="color">Tvoja omiljena boja: </label></th>
+<td><input type="color" name="color" id="color" title="Prikuplja se zbog statistike" /></td>
+</tr>
+<tr>
+<th><label for="subject">Naslov poruke: <span class="w3-text-red">*</span></label></th>
+<td><input type="text" name="subject" id="subject" required /></td>
+</tr>
+<tr>
+<th><label for="message">Tekst poruke: <span class="w3-text-red">*</span></label></th>
+<td><textarea name="message" id="message" width="50%" height="100px" required></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="ok" id="ok" value="Pošalji" /></td>
+</tr>
+</table>
+</form>
+</div>
+</details>
+</main>
+
+<footer class="w3-container w3-bottom" style="width: 100%;">
+<p>&copy; 2021 Dani</p>
+</footer>
+</div>
+
+<script>
+w3.slideshow(".slide1", 1500);
+w3.slideshow(".quotes", 3000);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block meta_title %}O autoru{% endblock meta_title %}
+{% block meta_description %}Upoznajte mene - autora ovog jednostavnog, ali nadam se korisnog i potencijalno zanimljivog sajta.{% endblock meta_description %}
+{% block meta_keywords %}fudbal, sport, EP, euro 2020, euro 2021, ep 2020, ep 2021, utakmice, mečevi, rezultati, igrači, timovi, zanimljivosti, reprezentacije, gradovi, Evropa, student, programiranje, sajtovi, Danijela Popović{% endblock meta_keywords %}
+{% block title %}O autoru | {{ block.super }}{% endblock title %}
+
+{% block page_type %}ProfilePage{% endblock page_type %}
+{% block content %}
+<h1 itemprop="alternateName">O autoru</h1>
+<section class="w3-container" itemprop="author" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="gender" content="https://schema.org/Female" />
+<p>Zovem se <span itemprop="name">Danijela Popović</span> i rođena sam u državi koja više ne postoji, a zvala se <span itemprop="nationality" itemscope itemtype="https://schema.org/Country"><span itemprop="name">Jugoslavija</span></span>. To se dogodilo sada već davnog <time datetime="1995-11-30">30. novembra 1995. godine</time> u gradiću po imenu <span itemprop="birthPlace" itemscope itemtype="https://schema.org/Place"><span itemprop="name">Negotin</span></span>.</p>
+<details open>
+<summary class="w3-button">Više detalja</summary>
+<p style="background-color: #440044;">Zovem se <span itemprop="name">Danijela Popović</span>, rođena sam <time datetime="1995-11-30">30. 11. 1995.</time> i volim razne stvari: muziku, čitanje, programiranje, tehnologiju generalno, šetnje po prirodi, plažu, sankanje i grudvanje...</p>
+<p>Studiram <span itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity"><span itemprop="department" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Španski jezik, hispanske književnosti i kulture</span></span>, jedan od programa koje nudi <span itemprop="name">Filološki fakultet Univerziteta u Beogradu</span> koji <time itemprop="openingHours" datetime="Mo-Fr 08:00-21:45">svakog radnog dana od 08:00 do 21:45</time> na predavanja iz raznih predmeta primi nekoliko hiljada svojih studenata.</span></p>
+<p>Proleća 2021. godine osvojila sam <span itemprop="award">drugo mesto na književnom konkursu koji su organizovali <span itemscope itemtype="https://schema.org/Organization"><dfn id="cibam" itemprop="name"><abbr title="Centar za iberoameričke studije Filozofskog fakulteta Univerziteta u Novom Sadu / Centro de estudios iberoamericanos de la Facultad de filosofía y letras de la Universidad de Novi Sad">CIBAM</abbr></dfn></span> i <span itemscope itemtype="https://schema.org/Organization"><dfn id="apes" itemprop="name"><abbr title="Društvo profesora španskog jezika u Srbiji / Asociación de profesores de español en Serbia">APES</abbr></dfn></span></span>, zbog čega sam veoma srećna.</p>
+</details>
+</main>
+
+<footer class="w3-container w3-bottom" style="width: 100%;">
+<p>&copy; 2021 Dani</p>
+</footer>
+</div>
+
+<script>
+w3.slideshow(".slide1", 1500);
+w3.slideshow(".quotes", 3000);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<aside class="col-lg-4">
+<!-- Widget [Search Bar Widget]-->
+<section class="widget search">
+<header>
+<h3 class="h6">Pretraga</h3>
+</header>
+<form action="{% url 'search_matches' %}" class="search-form">
+<div class="form-group">
+<input type="text" name="q" placeholder="Koji meč želiš da pronađeš?" />
+<button type="submit" aria-label="Pretraži" class="submit"><i class="icon-search" aria-hidden="true" title="Pretraži"></i></button>
+</div>
+</form>
+</section><hr />
+<!-- Widget [Latest matches Widget]-->
+<section class="widget latest-matches">
+<header>
+<h3 class="h6">{{ settings.LATEST_MATCHES_TITLE }}</h3>
+</header>
+<div class="matches">
+{% for match in most_recent %}
+<a href="{{ match.get_absolute_url }}"><span class="title"><strong>{{ match.title }}</strong></span></a><br />
+{% endfor %}
+</div>
+</section>
+</aside>

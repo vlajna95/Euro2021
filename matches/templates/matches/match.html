@@ -1,0 +1,60 @@
+{% extends "matches/base.html" %}
+{% load static %}
+
+{% block title %}{{ match.title }} | {{ block.super }}{% endblock title %}
+
+{% block styles_and_scripts %}
+{{ block.super }}
+<style>
+.match-body img {
+width: 100%;
+}
+</style>
+{% endblock styles_and_scripts %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-lg-8"> 
+<main class="container">
+<article class="single">
+<header class="details">
+<h1>{{ match.title }}</h1>
+<p class="phase text-muted">Faza takmičenja: {{ match.phase }}</p>
+<p class="date"><i class="icon-calendar" aria-hidden="true" title="Datum odigravanja meča"></i>Datum odigravanja meča: {{ match.date }}</p>
+<p class="stadium text-muted">Stadion: {{ match.stadium }}</p>
+<p class="spectators text-muted">Broj gledalaca na stadionu: {{ match.spectators }}</p>
+<p class="referee text-muted">Glavni sudija: {{ match.referee }}</p>
+</header><hr />
+<section>
+<p class="score"><h2>{{ match.team1 }} {{ match.team1_goals }} - {{ match.team2_goals }} {{ match.team2 }}</h2></p>
+<p>{{ match.overview|safe }}</p>
+</section>
+<section class="matchs-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+{% if match.previous_match %}
+<a href="{{ match.previous_match.get_absolute_url }}" title="Prethodni meč" class="prev-match text-left d-flex align-items-center">
+<div class="icon prev"><i class="fa fa-angle-left" aria-hidden="true" title="Prethodni meč"></i></div>
+<div class="text">
+<strong class="text-primary">Prethodni meč</strong>
+<h6>{{ match.previous_match.title }}</h6>
+</div>
+</a>
+{% endif %}
+{% if match.next_match %}
+<a href="{{ match.next_match.get_absolute_url }}" title="Sledeći meč" class="next-match text-right d-flex align-items-center justify-content-end">
+<div class="text">
+<strong class="text-primary">Sledeći meč </strong>
+<h6>{{ match.next_match.title }}</h6>
+</div>
+<div class="icon next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+</a>
+{% endif %}
+</section>
+</article>
+</main>
+</div>
+
+{% include "matches/sidebar.html" with most_recent=most_recent %}
+</div>
+</div>
+{% endblock content %}
